@@ -1,0 +1,105 @@
+
+.modal-contentt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 48%;
+    height: 52%;
+    margin-top: 110px;
+    background-color: white !important;
+    border-radius: 10px;
+  
+  }
+  .premium-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    width: 450px; 
+    height: 500px; 
+    background-color: #809ad4;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    
+  
+ 
+  }
+.titlee{
+    display: flex;
+    justify-content: center; /* Align to the left */
+    width: 450px; /* Take up 50% of the available width */
+    height: 500px;
+    background-color: white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+.button-container{
+    display: block;
+   
+
+}
+
+
+.prem-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+
+
+}
+
+.premium-butt{
+    border-radius: 10px;
+    padding: 22px;
+    width: 340px;
+    margin-top: 150px;
+    font-size: 17px;
+    padding: .5rem 3rem;
+    color: #222;
+    box-shadow: 0 0 6px 0 rgba(46, 65, 143, 0.5);
+    border: solid 3px transparent;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(79deg, rgb(3, 15, 29), #0e1446  48%,  #809ad4);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    box-shadow: 2px 1000px 1px  white inset;
+}
+.premium-butt:hover {
+    box-shadow: none;
+    color: white;
+  }
+.premium-but{
+    border-radius: 10px;
+    padding: 22px;
+    width: 340px;
+    margin-top: 40px;
+    font-size: 17px;
+    padding: .5rem 3rem;
+    color: #222;
+    box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+    border: solid 3px transparent;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(79deg, rgb(3, 15, 29), #0e1446  48%,  #809ad4 );
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    box-shadow: 2px 1000px 1px white inset;
+}
+.premium-but:hover {
+    box-shadow: none;
+    color: white;
+  }
+  .premium-plan{
+    font-size: 32px;
+    font-weight: 600;
+  
+  }
+  .premium-plan-container{
+    margin-top: 80px;
+ 
+  }
+
+  .prem-plan{
+    font-size: 20px;
+    margin-top: 60px;
+  }
+

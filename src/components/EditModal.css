@@ -1,0 +1,253 @@
+@media (min-width: 1700px){
+    .modal-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      margin-top: 110px;
+    }
+      .img-edit{
+    
+        width: 280px;
+        height: 380px;
+        border-radius: 16px;
+        margin-top: 60px;
+    
+    }
+    
+    .span-modal{
+        display: block;
+        font-size: 14px;
+        color: rgb(223, 222, 222);
+    }
+    
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 400px;
+      }
+      
+      .input-label {
+        font-size: 14px;
+        color: rgb(223, 222, 222);
+        
+      }
+      
+      .edit-prompt-modal {
+        position: relative; /* Set position to relative */
+        width: 400px;
+        padding: 10px 10px 40px 10px; /* Adjust the padding to create space for the SendIcon button */
+        font-size: 17px;
+        background-color: white;
+        color: #222;
+        border-radius: 10px;
+        outline: none;
+         margin-top: 20px;
+      }
+      .edit-prompt-modal::placeholder {
+        color: grey;
+        
+    
+      }
+      .edit-prompt-modal:focus {
+        box-shadow: 0 0 0 1px grey; /* add white box-shadow when active */
+      }
+      .send-icon-button {
+        position: absolute;
+        top: 86%;
+        right: 10px;
+        transform: translateY(-50%);
+        background-color: transparent;
+        color: #5d74a5;
+        padding: 0;
+        border: none;
+        cursor: pointer;
+      }
+      .close-Btn-modal {
+        position: fixed;
+        font-size: 16px;
+        font-weight: 600;
+        top: 30px;
+        right: 15px;
+        cursor: pointer;
+        color: white;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(109, 108, 108, 0.3);
+        border-radius: 50%;
+        backdrop-filter: blur(5px); /* Optional: Adds a blur effect */
+        -webkit-backdrop-filter: blur(5px); /* Optional: Adds a blur effect for Safari */
+        z-index: 9999;
+      }
+      
+      .close-Btn-modal::before {
+        content: '';
+        position: relative;
+        z-index: 1;
+      }
+      .modal_download_container{
+        position: absolute;
+       /* Adjust the top position as needed */
+        left: calc(50% + 140px);
+        
+        
+      }
+      .loading-modal {
+       justify-content: center;
+       
+       
+      }
+      .modal-download {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 1px;
+        cursor: pointer;
+        border-bottom-right-radius: 16px;
+      }
+      .img-style-modal{
+        margin-top: 100px;
+     
+      }
+    
+    .img-modal{
+       margin-left: 10px;
+       margin-top: 10px;
+     }
+      
+    }
+  
+  @media (max-width: 1700px){
+  .modal-content {
+      /* Your existing styles */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      margin-top: 100px;
+      
+    }
+  .img-edit{
+    
+      width: 280px;
+      height: 380px;
+      border-radius: 16px;
+      margin-top: 60px;
+  
+  }
+  
+  .span-modal{
+      display: block;
+      font-size: 14px;
+      color: rgb(223, 222, 222);
+  }
+  
+  .input-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 400px;
+    }
+    
+    .input-label {
+      font-size: 14px;
+      color: rgb(223, 222, 222);
+      
+    }
+    
+    .edit-prompt-modal {
+      position: relative; /* Set position to relative */
+      width: 400px;
+      padding: 10px 10px 40px 10px; /* Adjust the padding to create space for the SendIcon button */
+      font-size: 17px;
+      background-color: #333;
+      color: white;
+      border-radius: 10px;
+      outline: none;
+       margin-top: 20px;
+    }
+    .edit-prompt-modal::placeholder {
+      color: grey;
+      
+  
+    }
+    .edit-prompt-modal:focus {
+      box-shadow: 0 0 0 1px grey; /* add white box-shadow when active */
+    }
+    .send-icon-button {
+      position: absolute;
+      top: 86%;
+      right: 10px;
+      transform: translateY(-50%);
+      background-color: transparent;
+      color: #8965c7;
+      padding: 0;
+      border: none;
+      cursor: pointer;
+    }
+    .close-Btn-modal {
+      position: fixed;
+      font-size: 15px;
+      top: 30px;
+      right: 15px;
+      cursor: pointer;
+      color: white;
+      height: 30px;
+      width: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(87, 87, 87, 0.3);
+      border-radius: 50%;
+      backdrop-filter: blur(5px); /* Optional: Adds a blur effect */
+      -webkit-backdrop-filter: blur(5px); /* Optional: Adds a blur effect for Safari */
+      z-index: 9999;
+    }
+    
+    .close-Btn-modal::before {
+      content: '';
+      position: relative;
+      z-index: 1;
+    }
+    .modal_download_container{
+      position: absolute;
+     /* Adjust the top position as needed */
+      left: calc(50% + 140px);
+      
+      
+    }
+    .loading-modal {
+     justify-content: center;
+     
+     
+    }
+    .modal-download {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1px;
+      cursor: pointer;
+      border-bottom-right-radius: 16px;
+    }
+    .img-style-modal{
+      margin-top: 100px;
+   
+    }
+  
+  .img-modal{
+     margin-left: 10px;
+     margin-top: 10px;
+   }
+  }
