@@ -70,6 +70,7 @@ axios.post('https://react-nwgw.onrender.com/register',
                   position: toast.POSITION.TOP_RIGHT
               });
             }
+              
 
             if (res.data.code === 200) {
               toast.success('Successfully signed up', {
@@ -78,6 +79,11 @@ axios.post('https://react-nwgw.onrender.com/register',
              
               setAuthMode("login");
             } 
+               if (res.data.code === 401) {
+                  toast.error('Please provide a valid email address.', {
+                    position: toast.POSITION.TOP_RIGHT
+                });
+              }
             }).catch(err => {
                 console.log(err)
             })
