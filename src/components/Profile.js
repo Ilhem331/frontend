@@ -33,7 +33,7 @@ export default function Profile() {
     localStorage.setItem("auth-token", "");
     token = "";
     }
-    const tokenResponse = await axios.post('https://react-app-gubf.onrender.com/tokenIsValid', null, {headers: {"x-auth-token": token}});
+    const tokenResponse = await axios.post('https://react-nwgw.onrender.com/tokenIsValid', null, {headers: {"x-auth-token": token}});
     if (tokenResponse.data) {
     const userRes = await axios.get("https://react-app-gubf.onrender.com", {
     headers: { "x-auth-token": token },
