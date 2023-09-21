@@ -144,7 +144,7 @@ const gotoProfilePage = () => {
                 bio,}
                 
             
-          axios.post('https://react-app-gubf.onrender.com/updateById', dataa,
+          axios.post('https://react-nwgw.onrender.com/updateById', dataa,
           {
             headers: {"x-auth-token": token},
                         
@@ -191,7 +191,7 @@ const gotoProfilePage = () => {
             const updateuser = async(e)=>{
                 e.preventDefault();
         
-                 axios.put(`https://react-app-gubf.onrender.com/${id}`,
+                 axios.put(`https://react-nwgw.onrender.com/${id}`,
                 {
                     
                     username,
