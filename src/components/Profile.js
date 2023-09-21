@@ -35,7 +35,7 @@ export default function Profile() {
     }
     const tokenResponse = await axios.post('https://react-nwgw.onrender.com/tokenIsValid', null, {headers: {"x-auth-token": token}});
     if (tokenResponse.data) {
-    const userRes = await axios.get("https://react-app-gubf.onrender.com", {
+    const userRes = await axios.get("https://react-nwgw.onrender.com", {
     headers: { "x-auth-token": token },
     });
     setUserD({
