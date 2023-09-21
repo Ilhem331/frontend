@@ -55,7 +55,7 @@ const modalContentStyles = {
     setIsLoading(true);
    
     axios
-      .post('http://localhost:5000/pix-pix', {
+      .post('https://react-app-gubf.onrender.com/pix-pix', {
         prompt: modifiedText,
         init_image: imageUrl,
       })
@@ -77,7 +77,7 @@ const modalContentStyles = {
       return;
     }
   
-    const downloadUrl = `http://localhost:5000/api/download-image`;
+    const downloadUrl = `https://react-app-gubf.onrender.com/api/download-image`;
   
     fetch(downloadUrl, {
       method: 'POST',
