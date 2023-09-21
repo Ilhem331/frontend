@@ -55,7 +55,7 @@ const handelSubmit = (e) => {
   if(username.length==0||email.length==0 ||password.length==0 ){
     setError(true)
 }
-axios.post('https://react-app-gubf.onrender.com/register',
+axios.post('https://react-nwgw.onrender.com/register',
             {
                 username: username,
                 email: email,
@@ -101,7 +101,7 @@ const submit = async (e) => {
   }
 
   axios
-    .post('https://react-app-gubf.onrender.com/login-user', {
+    .post('https://react-nwgw.onrender.com/login-user', {
       email: email,
       password: password,
     })
