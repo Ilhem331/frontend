@@ -20,7 +20,6 @@ import cubism from "./images/cubism.png";
 import surrealism from "./images/surrealism.png";
 import popArt from "./images/popArt.png";
 import impressionism from "./images/impressionism.png";
-import Carousel from 'react-elastic-carousel';
 import { toast } from 'react-toastify';
 import "./ArtGeneration.css"
 import 'react-toastify/dist/ReactToastify.css';
@@ -399,7 +398,7 @@ const handleCreateImage = () => {
 
 <div className="art-contain">
 <div className="art-sty-container">
-  <Carousel breakPoints={breakPoints}>
+
     {artStyles.map((style) => (
       <div key={style.id} className="art-styl">
         <img
@@ -411,7 +410,7 @@ const handleCreateImage = () => {
         <p>{style.name}</p>
       </div>
     ))}
-  </Carousel>
+
 </div>
 </div>
 
