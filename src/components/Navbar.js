@@ -113,7 +113,7 @@ const Navbar= () => {
   const handelSubmit = (e) => {
       e.preventDefault();
       
-    axios.post('https://react-app-gubf.onrender.com/updateUser',
+    axios.post('https://react-nwgw.onrender.com/updateUser',
                 {
                     
                   
