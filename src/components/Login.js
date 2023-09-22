@@ -157,7 +157,7 @@ const submit = async (e) => {
         <form className="login-form" onSubmit={submit}>
             <label htmlFor ="email" style={{color: '#484848', fontSize: '18px',
             fontWeight: '600'}}>Enter Email</label>
-            <input  value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email"  name="email" id="in" autocomplete="new-password"/>
+            <input  value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email"  name="email" id="in"/>
             {error&&email.length<=0&&
              <div className="notification">Please enter your email</div>}
             <label htmlFor ="password" style={{color: '#484848', fontSize: '18px',
@@ -206,7 +206,7 @@ const submit = async (e) => {
              <div className="notification">Please enter  username</div>}
             <label style={{color: '#484848', fontSize: '18px',
             fontWeight: '600'}} for ="email">Enter email</label>
-            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" id="in" name="email" autocomplete="new-password"/>
+            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" id="in" name="email"/>
             {error&&email.length<=0&&
              <div className="notification">Please enter email</div>}
             <label style={{color: '#484848', fontSize: '18px',
