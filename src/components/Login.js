@@ -64,7 +64,7 @@ axios.post('https://react-nwgw.onrender.com/register',
             })
             .then(res => {
                 console.log(res.data)
-                 if (res.data.code === 400) {
+                 if (res.data.code === 401) {
                   toast.error('Please provide a valid email address.', {
                     position: toast.POSITION.TOP_RIGHT
                 });
