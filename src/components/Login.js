@@ -64,7 +64,11 @@ axios.post('https://react-nwgw.onrender.com/register',
             })
             .then(res => {
                 console.log(res.data)
-                
+                 if (res.data.code === 401) {
+                  toast.error('Please provide a valid email address.', {
+                    position: toast.POSITION.TOP_RIGHT
+                });
+              }
               if (res.data.code === 402) {
                 toast.error('An account with this email already exists.', {
                   position: toast.POSITION.TOP_RIGHT
