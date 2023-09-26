@@ -77,7 +77,7 @@ axios.post('https://react-nwgw.onrender.com/register',
               
 
             if (res.data.code === 200) {
-              toast.success('Successfully signed up', {
+              toast.success('Please check your email for confirmation', {
                 position: toast.POSITION.TOP_RIGHT,
               });
              
@@ -112,6 +112,11 @@ const submit = async (e) => {
 
       if (res.data.code === 400) {
         toast.error('Invalid email or password', {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+      }
+       if (res.data.code === 403) {
+        toast.error('Account not verified', {
           position: toast.POSITION.TOP_RIGHT,
         });
       }
