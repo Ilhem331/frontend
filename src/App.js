@@ -22,44 +22,50 @@ const stripePromise = loadStripe('pk_test_51MqBW0DibfZFFh9BMGGX3KRkp2DzPckQVsXDC
 
 
 function App() {
-  useEffect(() => {
+    useEffect(() => {
     let deferredPrompt;
-const installButton = document.getElementById('installButton'); // Reference the button
 
-window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevent the default browser install prompt
-  e.preventDefault();
+    const beforeInstallPrompt = (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
 
-  // Store the event to show the prompt later
-  deferredPrompt = e;
+      // Show a custom toast notification with an "Install" button
+      toast.info(
+        <div>
+          <p>Add this app to your home screen for easy access.</p>
+          <button
+            onClick={() => {
+              // Show the browser's install prompt
+              deferredPrompt.prompt();
 
-  // Show a custom install prompt to the user
-  // You can use a button or other UI element to trigger this
-  // Example: Show a button with an "Add to Home Screen" label
-  installButton.style.display = 'block';
-});
+              // Wait for the user to respond to the prompt
+              deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                  console.log('User accepted the install prompt');
+                } else {
+                  console.log('User dismissed the install prompt');
+                }
+              });
 
-// Add a click event listener to your install button
-installButton.addEventListener('click', () => {
-  // Show the browser's install prompt
-  deferredPrompt.prompt();
+              // Close the toast notification
+              toast.dismiss();
+            }}
+          >
+            Install
+          </button>
+        </div>,
+        {
+          position: toast.POSITION.BOTTOM_CENTER,
+          autoClose: false, // Do not auto-close the toast
+        }
+      );
+    };
 
-  // Wait for the user to respond to the prompt
-  deferredPrompt.userChoice.then((choiceResult) => {
-    if (choiceResult.outcome === 'accepted') {
-      console.log('User accepted the install prompt');
-    } else {
-      console.log('User dismissed the install prompt');
-    }
+    window.addEventListener('beforeinstallprompt', beforeInstallPrompt);
 
-    // Reset the deferredPrompt variable
-    deferredPrompt = null;
-
-    // Hide the install button
-    installButton.style.display = 'none';
-  });
-});
-   
+    return () => {
+      window.removeEventListener('beforeinstallprompt', beforeInstallPrompt);
+    };
   }, []);
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
