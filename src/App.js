@@ -143,13 +143,6 @@ const [ userData, setUserData] = useState({
 <div className="App">
 <UserContext.Provider value={{ userData, setUserData }}>
   <Navbar/>
-
-       <div>
-    
-      <button id="installButton" style={{ display: 'none' }}>
-        Add to Home Screen
-      </button>
-    </div>
       
   
             <Routes>
