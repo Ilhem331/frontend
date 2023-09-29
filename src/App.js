@@ -22,6 +22,45 @@ const stripePromise = loadStripe('pk_test_51MqBW0DibfZFFh9BMGGX3KRkp2DzPckQVsXDC
 
 
 function App() {
+  useEffect(() => {
+    let deferredPrompt;
+const installButton = document.getElementById('installButton'); // Reference the button
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent the default browser install prompt
+  e.preventDefault();
+
+  // Store the event to show the prompt later
+  deferredPrompt = e;
+
+  // Show a custom install prompt to the user
+  // You can use a button or other UI element to trigger this
+  // Example: Show a button with an "Add to Home Screen" label
+  installButton.style.display = 'block';
+});
+
+// Add a click event listener to your install button
+installButton.addEventListener('click', () => {
+  // Show the browser's install prompt
+  deferredPrompt.prompt();
+
+  // Wait for the user to respond to the prompt
+  deferredPrompt.userChoice.then((choiceResult) => {
+    if (choiceResult.outcome === 'accepted') {
+      console.log('User accepted the install prompt');
+    } else {
+      console.log('User dismissed the install prompt');
+    }
+
+    // Reset the deferredPrompt variable
+    deferredPrompt = null;
+
+    // Hide the install button
+    installButton.style.display = 'none';
+  });
+});
+   
+  }, []);
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -99,7 +138,12 @@ const [ userData, setUserData] = useState({
 <UserContext.Provider value={{ userData, setUserData }}>
   <Navbar/>
 
-      
+       <div>
+    
+      <button id="installButton" style={{ display: 'none' }}>
+        Add to Home Screen
+      </button>
+    </div>
       
   
             <Routes>
