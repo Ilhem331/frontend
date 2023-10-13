@@ -2,7 +2,6 @@ import React, {useContext, useState, useEffect, useRef} from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import 'react-image-crop/dist/ReactCrop.css';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import AvatarEditor from 'react-avatar-editor';
 import axios from "axios";
 import "./UserProfile.css";
 import {  toast } from 'react-toastify';
@@ -15,7 +14,7 @@ import UserContext from './context/UserContext';
 import {MDBIcon} from 'mdb-react-ui-kit';
 import CircularProgress from "@mui/material/CircularProgress";
 
-function UserProfile({ setOpenModal, onCoverPictureUpdate }) {
+function UserProfile({onCoverPictureUpdate }) {
     
     const navigate = useNavigate();
     const [email, setEmail] = useState ('');
@@ -117,7 +116,9 @@ const gotoProfilePage = () => {
       }, [userData.user]); 
 
      
- 
+  
+      
+
 
     
       
@@ -144,7 +145,7 @@ const gotoProfilePage = () => {
                 bio,}
                 
             
-          axios.post('https://react-nwgw.onrender.com/updateById', dataa,
+          axios.post('http://localhost:5000/updateById', dataa,
           {
             headers: {"x-auth-token": token},
                         
@@ -191,7 +192,7 @@ const gotoProfilePage = () => {
             const updateuser = async(e)=>{
                 e.preventDefault();
         
-                 axios.put(`https://react-nwgw.onrender.com/${id}`,
+                 axios.put(`http://localhost:5000/${id}`,
                 {
                     
                     username,
@@ -229,18 +230,18 @@ const gotoProfilePage = () => {
         
         <div className="body">
         <div>
-      <button className="arrow-back-button" onClick={gotoProfilePage}><ArrowBackIcon style={{width: '60px', fontSize: '32px'}}/>Go Back</button>
+      <button className="arrow-back-button" onClick={gotoProfilePage}><ArrowBackIcon className="arrow-back-icon"/>Go Back</button>
       </div>
         <div className="prof-user">
             <div className="cover">
-                <Button onClick={handleClick} id="icon"><Avatar  alt="" src={pic} sx={{ width: 140, height: 140,  border: 'solid 3px white'}} onLoad={() => setAvatarLoading(false)}></Avatar>
+                <Button onClick={handleClick} id="icon"><Avatar className="pic-size" alt="" src={pic} onLoad={() => setAvatarLoading(false)}></Avatar>
                 {avatarLoading ? ( // Show spinner if avatar is loading
                 <div className="loading-spinner">
                 <CircularProgress style={{ color: 'white'}} />
                 </div>
                 ) : null}
                
-                <MDBIcon style={{marginTop: '140px', fontSize:'18px'}} far icon="edit mb-5"/>
+                <MDBIcon className="mdb-icon" far icon="edit mb-5"/>
                
                 </Button>
                 
