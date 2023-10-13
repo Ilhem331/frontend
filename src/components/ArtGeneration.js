@@ -22,7 +22,6 @@ import popArt from "./images/popArt.png";
 import impressionism from "./images/impressionism.png";
 import { toast } from 'react-toastify';
 import "./ArtGeneration.css";
-import useWindowSize from "./useWindowSize";
 import 'react-toastify/dist/ReactToastify.css';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -194,7 +193,6 @@ const Home= () => {
   const [inputValue, setInpuValue] = useState(options[0]);
   const [showRandomSuggestion, setShowRandomSuggestion] = useState(false);
   const [isCubeRotated, setIsCubeRotated] = useState(false);
-  const { width } = useWindowSize();
   const navigate = useNavigate ();
   const gotoHomePage = () => {
     window.location.reload();
