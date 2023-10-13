@@ -3,7 +3,397 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;@media (min-width: 1800px){
+    .modal-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: 100%;
+      height: 100%;
+      padding: 20px;
+      top: 52%;
+    
+    }
+      .img-edit{
+    
+        width: 280px;
+        height: 380px;
+        border-radius: 16px;
+        margin-top: 60px;
+    
+    }
+    
+    .span-modal{
+        display: block;
+        font-size: 14px;
+        color: rgb(223, 222, 222);
+    }
+    
+    .input-container {
+      position: relative; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 400px;
+      }
+      
+      .input-label {
+        font-size: 14px;
+        color: rgb(223, 222, 222);
+        
+      }
+      
+      .edit-prompt-modal {
+        position: relative; 
+        width: 400px;
+        padding: 10px 10px 22px 10px;
+        font-size: 17px;
+        background-color: white;
+        color: #222;
+        border-radius: 10px;
+        outline: none;
+        margin-top: 40px;
+      }
+      .edit-prompt-modal::placeholder {
+        color: grey;
+        
+    
+      }
+      .edit-prompt-modal:focus {
+        box-shadow: 0 0 0 1px grey; 
+      }
+      .send-icon-button {
+        position: absolute; 
+        top: 80%; 
+        right: 10px;
+        background-color: transparent;
+       color: #5d74a5;
+       padding: 0;
+       border: none;
+       cursor: pointer;
+      }
+      .close-Btn-modal {
+        position: fixed;
+        font-size: 16px;
+        font-weight: 600;
+        right: 15px;
+        cursor: pointer;
+        color: white;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(109, 108, 108, 0.3);
+        border-radius: 50%;
+        backdrop-filter: blur(5px); 
+        -webkit-backdrop-filter: blur(5px); 
+        z-index: 9999;
+      }
+      
+      .close-Btn-modal::before {
+        content: '';
+        position: relative;
+        z-index: 1;
+      }
+      .modal_download_container{
+        position: absolute;
+       /* Adjust the top position as needed */
+        left: calc(50% + 140px);
+        
+        
+      }
+      .loading-modal {
+       justify-content: center;
+       
+       
+      }
+      .modal-download {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 1px;
+        cursor: pointer;
+        border-bottom-right-radius: 16px;
+      }
+      .img-style-modal{
+        margin-top: 100px;
+     
+      }
+    
+    .img-modal{
+       margin-left: 10px;
+       margin-top: 10px;
+     }
+      
+    }
+    @media (min-width: 480px) and (max-width: 1800px){
+  .modal-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      top: 52%;
+      
+    }
+  .img-edit{
+    
+      width: 280px;
+      height: 380px;
+      border-radius: 16px;
+      margin-top: 60px;
+  
+  }
+  
+  .span-modal{
+      display: block;
+      font-size: 14px;
+      color: rgb(223, 222, 222);
+  }
+  
+  .input-container {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    }
+    
+    .input-label {
+      font-size: 14px;
+      color: rgb(223, 222, 222);
+      
+    }
+    
+    .edit-prompt-modal {
+      position: relative; 
+      width: 400px;
+      padding: 10px 10px 22px 10px;
+      font-size: 17px;
+      background-color: white;
+      color: #222;
+      border-radius: 10px;
+      outline: none;
+      margin-top: 40px;
+    }
+    .edit-prompt-modal::placeholder {
+      color: grey;
+      
+  
+    }
+    .edit-prompt-modal:focus {
+      box-shadow: 0 0 0 1px grey; 
+    }
+    .send-icon-button {
+      position: absolute; 
+      top: 80%; 
+      right: 10px;
+      background-color: transparent;
+     color: #5d74a5;
+     padding: 0;
+     border: none;
+     cursor: pointer;
+    }
+    
+    .close-Btn-modal {
+      position: fixed;
+      font-size: 15px;
+      right: 15px;
+      cursor: pointer;
+      color: white;
+      height: 30px;
+      width: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(87, 87, 87, 0.3);
+      border-radius: 50%;
+      backdrop-filter: blur(5px); 
+      -webkit-backdrop-filter: blur(5px); 
+      z-index: 9999;
+    }
+    
+    .close-Btn-modal::before {
+      content: '';
+      position: relative;
+      z-index: 1;
+    }
+    .modal_download_container{
+      position: absolute;
+      left: calc(50% + 140px);
+      
+      
+    }
+    .loading-modal {
+     justify-content: center;
+     
+     
+    }
+    .modal-download {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1px;
+      cursor: pointer;
+      border-bottom-right-radius: 16px;
+    }
+    .img-style-modal{
+      margin-top: 100px;
+   
+    }
+  
+  .img-modal{
+     margin-left: 10px;
+     margin-top: 10px;
+   }
+  }
+
+  @media (max-width: 480px){
+    .modal-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      top: 52%;
+    }
+      .img-edit{
+    
+        width: 220px;
+        height: 300px;
+        border-radius: 16px;
+        margin-top: 80px;
+        margin-bottom: 10px;
+    
+    }
+    
+    .span-modal{
+        display: block;
+        font-size: 14px;
+        color: rgb(223, 222, 222);
+    }
+    
+    .input-container {
+      position: relative; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 300px;
+      }
+      
+      .input-label {
+        font-size: 14px;
+        color: rgb(223, 222, 222);
+        
+      }
+      
+      .edit-prompt-modal {
+        position: relative; 
+        width: 300px;
+        padding: 10px 10px 22px 10px;
+        font-size: 17px;
+        background-color: white;
+        color: #222;
+        border-radius: 10px;
+        outline: none;
+        margin-top: 40px;
+      }
+      .edit-prompt-modal::placeholder {
+        color: grey;
+        
+    
+      }
+      .edit-prompt-modal:focus {
+        box-shadow: 0 0 0 1px grey; 
+      }
+      .send-icon-button {
+        position: absolute; 
+        top: 80%; 
+        right: 10px;
+        background-color: transparent;
+       color: #5d74a5;
+       padding: 0;
+       border: none;
+       cursor: pointer;
+      }
+      .close-Btn-modal {
+        position: fixed;
+        font-size: 16px;
+        font-weight: 600;
+        right: 15px;
+        cursor: pointer;
+        color: white;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(109, 108, 108, 0.3);
+        border-radius: 50%;
+        backdrop-filter: blur(5px); 
+        -webkit-backdrop-filter: blur(5px); 
+        z-index: 9999;
+      }
+      
+      .close-Btn-modal::before {
+        content: '';
+        position: relative;
+        z-index: 1;
+      }
+      .modal_download_container{
+        position: absolute;
+       /* Adjust the top position as needed */
+        left: calc(50% + 110px);
+        top: 10%;
+        
+        
+      }
+      .loading-modal {
+        position: absolute;
+        top: 30%;
+        left: 45%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        z-index: 1;
+      }
+      .modal-download {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 1px;
+        cursor: pointer;
+        border-bottom-right-radius: 16px;
+      }
+  
+        .img-style-modal {
+          margin-top: 10px;
+          position: relative; 
+        }
+        
+    
+    .img-modal{
+    
+      margin-top: 10px;
+      display: block; 
+      max-width: 100%; 
+      border-radius: 16px;
+     }
+      
+    }
+  
       height: 100%;
       padding: 20px;
       margin-top: 110px;
@@ -37,9 +427,9 @@
       }
       
       .edit-prompt-modal {
-        position: relative; /* Set position to relative */
+        position: relative; 
         width: 400px;
-        padding: 10px 10px 40px 10px; /* Adjust the padding to create space for the SendIcon button */
+        padding: 10px 10px 40px 10px; 
         font-size: 17px;
         background-color: white;
         color: #222;
@@ -81,8 +471,8 @@
         justify-content: center;
         background-color: rgba(109, 108, 108, 0.3);
         border-radius: 50%;
-        backdrop-filter: blur(5px); /* Optional: Adds a blur effect */
-        -webkit-backdrop-filter: blur(5px); /* Optional: Adds a blur effect for Safari */
+        backdrop-filter: blur(5px); 
+        -webkit-backdrop-filter: blur(5px); 
         z-index: 9999;
       }
       
@@ -166,9 +556,9 @@
     }
     
     .edit-prompt-modal {
-      position: relative; /* Set position to relative */
+      position: relative; 
       width: 400px;
-      padding: 10px 10px 40px 10px; /* Adjust the padding to create space for the SendIcon button */
+      padding: 10px 10px 40px 10px;
       font-size: 17px;
       background-color: #333;
       color: white;
@@ -182,7 +572,7 @@
   
     }
     .edit-prompt-modal:focus {
-      box-shadow: 0 0 0 1px grey; /* add white box-shadow when active */
+      box-shadow: 0 0 0 1px grey; 
     }
     .send-icon-button {
       position: absolute;
@@ -209,8 +599,8 @@
       justify-content: center;
       background-color: rgba(87, 87, 87, 0.3);
       border-radius: 50%;
-      backdrop-filter: blur(5px); /* Optional: Adds a blur effect */
-      -webkit-backdrop-filter: blur(5px); /* Optional: Adds a blur effect for Safari */
+      backdrop-filter: blur(5px); 
+      -webkit-backdrop-filter: blur(5px); 
       z-index: 9999;
     }
     
@@ -221,7 +611,6 @@
     }
     .modal_download_container{
       position: absolute;
-     /* Adjust the top position as needed */
       left: calc(50% + 140px);
       
       
