@@ -247,7 +247,7 @@ const Home= () => {
     
 
       // Send the request to the image-to-image API
-      const response = await axios.post('http://localhost:5000/api/base64_crop', formData, );
+      const response = await axios.post('https://react-nwgw.onrender.com/api/base64_crop', formData, );
       // Handle the response from the image-to-image API
       const result = response.data;
       // Handle the result from the backend API
@@ -265,7 +265,7 @@ const Home= () => {
     } else {
       setLoading(true)
       // Send the request to the text-to-image API
-      const response = await axios.post('http://localhost:5000/api/generate-images', { prompt: prompt + artStyle });
+      const response = await axios.post('https://react-nwgw.onrender.com/api/generate-images', { prompt: prompt + artStyle });
       // Handle the response from the text-to-image API
       const { output } = response.data;
       setGeneratedImage(output);
@@ -324,7 +324,7 @@ const downloadImage = (imageUrl) => {
     return;
   }
 
-  const downloadUrl = `http://localhost:5000/api/download-image`;
+  const downloadUrl = `https://react-nwgw.onrender.com/api/download-image`;
 
   fetch(downloadUrl, {
     method: 'POST',
@@ -352,7 +352,7 @@ const handleSubmitEdit = (event) => {
   event.preventDefault();
 
   // Send the request to the backend server API
-  axios.post('http://localhost:5000/pix-pix', {
+  axios.post('https://react-nwgw.onrender.com/pix-pix', {
     prompt: modifiedText,
     init_image:  selectedImage || generatedImg,
   })
