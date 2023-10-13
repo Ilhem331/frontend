@@ -21,8 +21,16 @@ import surrealism from "./images/surrealism.png";
 import popArt from "./images/popArt.png";
 import impressionism from "./images/impressionism.png";
 import { toast } from 'react-toastify';
-import "./ArtGeneration.css"
+import "./ArtGeneration.css";
+import useWindowSize from "./useWindowSize";
 import 'react-toastify/dist/ReactToastify.css';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import Flickity from 'react-flickity-component';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+
+import 'flickity/css/flickity.css'; // Import Flickity CSS
 const options = ['8k resolution',
 'Hyperreal',
 'Realistic', 'Anime',]
@@ -36,7 +44,19 @@ const breakPoints = [
   { width: 20, itemsToShow: 6 },
 
 ];
+const spanStyle = {
+  padding: '20px',
+  background: '#efefef',
+  color: '#000000'
+};
 
+const divStyle = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  backgroundSize: 'cover',
+  height: '400px'
+};
 const API_TOKEN = "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";
 const artStyles = [
   {
@@ -128,8 +148,25 @@ const artStyles = [
   },
  
 
-
 ]
+const responsive = {
+  0: { items: 1, swipeExtraPadding: 5, autoWidth: true }, 
+  100: { items: 3, swipeExtraPadding: 5, autoWidth: true }, 
+  200: { items: 4, swipeExtraPadding: 5, autoWidth: true }, 
+  400: { items: 4, swipeExtraPadding: 5, autoWidth: true }, 
+  500: { items: 5, swipeExtraPadding: 5, autoWidth: true }, 
+  1025: { items: 6, swipeExtraPadding: 5, autoWidth: true }, 
+
+};
+
+const flickityOptions = {
+  initialIndex: 0, 
+  cellAlign: 'left', 
+  pageDots: false, 
+  wrapAround: false, 
+   contain: true,
+};
+
 const Home= () => {
  
   const [prompt, setPrompt] = useState('');
@@ -157,6 +194,7 @@ const Home= () => {
   const [inputValue, setInpuValue] = useState(options[0]);
   const [showRandomSuggestion, setShowRandomSuggestion] = useState(false);
   const [isCubeRotated, setIsCubeRotated] = useState(false);
+  const { width } = useWindowSize();
   const navigate = useNavigate ();
   const gotoHomePage = () => {
     window.location.reload();
@@ -166,6 +204,7 @@ const Home= () => {
   const handleCubeClick = () => {
     setIsCubeRotated(!isCubeRotated);
   };
+
   const changeStrength = (event) => {
     const value = parseInt(event.target.value);
     let selectedStrength = 0.7;
@@ -196,6 +235,10 @@ const Home= () => {
   const handleButtonClick = (buttonName) => {
     setSelectedButton(buttonName);
   };
+  const handleImageCancel = () => {
+    setImageFile(null);
+    setImageName("");
+  };
   const handleSubmit = async (event) => {
     event.preventDefault();
     
@@ -209,7 +252,7 @@ const Home= () => {
     
 
       // Send the request to the image-to-image API
-      const response = await axios.post('https://react-nwgw.onrender.com/api/base64_crop', formData, );
+      const response = await axios.post('http://localhost:5000/api/base64_crop', formData, );
       // Handle the response from the image-to-image API
       const result = response.data;
       // Handle the result from the backend API
@@ -227,14 +270,12 @@ const Home= () => {
     } else {
       setLoading(true)
       // Send the request to the text-to-image API
-      const response = await axios.post('https://react-nwgw.onrender.com/api/generate-images', { prompt: prompt + artStyle });
+      const response = await axios.post('http://localhost:5000/api/generate-images', { prompt: prompt + artStyle });
       // Handle the response from the text-to-image API
       const { output } = response.data;
       setGeneratedImage(output);
       setLoading(false);
-      if (!output) {
-        throw new Error('Network error occurred. Please try again!');
-      }
+     
     }
   } catch (error) {
     // Handle errors and display toast notifications
@@ -288,7 +329,7 @@ const downloadImage = (imageUrl) => {
     return;
   }
 
-  const downloadUrl = `https://react-nwgw.onrender.com/api/download-image`;
+  const downloadUrl = `http://localhost:5000/api/download-image`;
 
   fetch(downloadUrl, {
     method: 'POST',
@@ -316,7 +357,7 @@ const handleSubmitEdit = (event) => {
   event.preventDefault();
 
   // Send the request to the backend server API
-  axios.post('https://react-nwgw.onrender.com/pix-pix', {
+  axios.post('http://localhost:5000/pix-pix', {
     prompt: modifiedText,
     init_image:  selectedImage || generatedImg,
   })
@@ -367,8 +408,9 @@ const handleCreateImage = () => {
   <div className="prompt-container">
   <div className="label-input-wrapper">
     <label id="la" htmlFor="prompt">
-      Enter your text prompt
+      Enter your prompt
     </label>
+    </div>
     <div className="input-button-container"> 
     <input
       className="prom"
@@ -376,49 +418,58 @@ const handleCreateImage = () => {
       onChange={handleInputChange} 
       type="text"
       name="input"
-      placeholder="Enter your prompt to generate the image"
+      placeholder="Describe your image"
       autoComplete="off"
     />
-
-     
-         
-  </div>
-  <button className="random-button" type="button" onClick={handleRandomSuggestionClick}>
-      Random <CasinoIcon style={{width:'16px', marginTop: '2px', marginLeft: '3px'}}/>
-              </button>
-  </div>
-  </div>
  
+<button className="random-button" type="button" onClick={handleRandomSuggestionClick}>
+      Random <CasinoIcon style={{width:'16px', marginTop: '2px', marginLeft: '3px'}}/>
+              </button>    
+  </div>
+  
 
-<div className="label-art-wrapper">
+  </div>
+
+
+  <div className="label-art-wrapper">
 
 <label id="art-st">Select style</label>
 <div className="art-containerr-image">
 
-
-<div className="art-contain">
 <div className="art-sty-container">
+<div className="art-contain">
+<AliceCarousel
+        responsive={responsive}
+        mouseDragEnabled
+        buttonsDisabled={true}
+       
+      > 
 
-    {artStyles.map((style) => (
-      <div key={style.id} className="art-styl">
-        <img
-          src={style.src}
-          alt={style.alt}
-          onClick={() => setArtStyle(style.name)}
-          className={artStyle === style.name ? "selected" : ""}
-        />
-        <p>{style.name}</p>
+{artStyles.map((style) => (
+            <div key={style.id} className="art-styl">
+              <img
+                src={style.src}
+                alt={style.alt}
+                onClick={() => setArtStyle(style.name)}
+                className={artStyle === style.name ? "selected" : ""}
+              />
+              <p>{style.name}</p>
+            </div>
+          ))}
+        
+        </AliceCarousel>
       </div>
-    ))}
-
-</div>
-</div>
-
- 
+    </div>
+    
+   
+    
 <div className="label-art-wrapper">
 {imageFile && !generatedImg ? (
   <div className="result_image_container">
     <img src={URL.createObjectURL(imageFile)} className="result_img" alt="Image" />
+    <button onClick={handleImageCancel} className="cancel-button">
+            X
+          </button>
     {loadingImg && (
                  <div className="loading-img">
                    <p>Creating...</p>
@@ -427,7 +478,7 @@ const handleCreateImage = () => {
                )}
     <div>
       
-      {!loadingImg && !generatedImg &&(
+     {!loadingImg && !generatedImg &&(
         <div className="slider-values-range">
       <input
         type="range"
@@ -443,7 +494,9 @@ const handleCreateImage = () => {
         <span className={`slider-value ${strength === 2 ? 'active' : ''}`}>Strong</span>
       </div>
     </div>
+    
       )}
+  
     </div>  
   </div>
 
@@ -469,6 +522,7 @@ const handleCreateImage = () => {
         />
         <div className="upload-img">Upload an image</div>
       </label>
+   
     </div> 
       )}
         </div>    
@@ -520,8 +574,8 @@ const handleCreateImage = () => {
     )}
     </div>
   {generatedImg && (
-          <div className="result_image_container">
-            <img src={generatedImg} className="result_img" alt="Generated Image" />
+          <div className="result_imaage_container">
+            <img src={generatedImg} className="resultt_img" alt="Generated Image" />
             <div className="iconss">
                  <FileDownloadSharpIcon
                    className="download-img"
@@ -551,10 +605,6 @@ const handleCreateImage = () => {
 </div>
 
 </form>
-
-
-
-
 
 {editedImg &&(
   <div className="result_image_container">
