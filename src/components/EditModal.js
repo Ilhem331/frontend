@@ -53,7 +53,7 @@ const modalContentStyles = {
     setIsLoading(true);
    
     axios
-      .post('https://react-nwgw.onrender.com/pix-pix', {
+      .post('http://localhost:5000/pix-pix', {
         prompt: modifiedText,
         init_image: imageUrl,
       })
@@ -75,7 +75,7 @@ const modalContentStyles = {
       return;
     }
   
-    const downloadUrl = `https://react-nwgw.onrender.com/api/download-image`;
+    const downloadUrl = `http://localhost:5000/api/download-image`;
   
     fetch(downloadUrl, {
       method: 'POST',
