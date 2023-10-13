@@ -113,7 +113,7 @@ const Navbar= () => {
   const handelSubmit = (e) => {
       e.preventDefault();
       
-    axios.post('https://react-nwgw.onrender.com/updateUser',
+    axios.post('http://localhost:5000/updateUser',
                 {
                     
                   
@@ -140,23 +140,18 @@ const Navbar= () => {
               if (
                 menuRef.current &&
                 !menuRef.current.contains(event.target) &&
-                !imgRef.current.contains(event.target) &&
-                !modalRef.current.contains(event.target) &&
-                !profileRef.current.contains(event.target) &&
-                !modalOpen &&
-                !logoutRef.current.contains(event.target) 
-                
+                !imgRef.current.contains(event.target) 
               ) {
                 setOpen(false);
               }
             };
           
             document.addEventListener("click", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, [modalOpen]);
+          
+            return () => {
+              document.removeEventListener("click", handleClickOutside);
+            };
+          }, [imgRef]);
     
     const handleToggle = () => setOpenModal(!openModal 
       );
@@ -170,6 +165,7 @@ const Navbar= () => {
     const gotoProfilePage = () => navigate("/profile");
     const gotoLoginPage = () => navigate("/login");
     const gotoPremiumPage = () => navigate("/premium");
+    const gotoHomePage = () => navigate("/");
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
        
@@ -212,7 +208,7 @@ const Navbar= () => {
      
         
         <nav className="nav" >
-		<h1 className="app-name">My application</h1>
+		<button  onClick={gotoHomePage} className="app-name">My application</button>
        
     <div className="avtar" >
   
@@ -220,9 +216,10 @@ const Navbar= () => {
     
 {userData.user ? (
   
-  <button className="bn" ref={imgRef} style={{ position: 'relative', padding: '0' }} onClick={ () => setOpen(!open)} onClose={handleCloseProfile}><Avatar src={pic} sx={{ width: 42, height: 42, marginLeft: '50px', border: 'solid 2px white' }}  >
-    
- </Avatar> <ArrowDropDownIcon style={{fontSize: '30px'}}/> </button> 
+  <button className="bn" ref={imgRef} style={{ position: 'relative', padding: '0' }} onClick={() => setOpen(!open)}>
+  <Avatar src={pic} sx={{ width: 42, height: 42, marginLeft: '50px', border: 'solid 2px white' }} />
+  <ArrowDropDownIcon style={{ fontSize: '30px' }} />
+</button>
 
 ) : 
   
@@ -273,13 +270,14 @@ const Navbar= () => {
         )}
         <ToastContainer />
       </div>
-      <hr style={{ margin: "0 -24px 24px" }} />
+      {/* <hr style={{ margin: "0 -24px 24px" }} />
       <div>
         <button className="premium" onClick={toggleModal} ref={modalRef}>
           Premium Plan
         </button>
         <PremiumModal isOpen={modalOpen} onClose={() => setModalOpen(false)} toggle={toggleModal} />
       </div>
+          */}
     </div>
   </div>
 )}
