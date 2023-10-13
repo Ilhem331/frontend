@@ -33,9 +33,9 @@ export default function Profile() {
     localStorage.setItem("auth-token", "");
     token = "";
     }
-    const tokenResponse = await axios.post('https://react-nwgw.onrender.com/tokenIsValid', null, {headers: {"x-auth-token": token}});
+    const tokenResponse = await axios.post('http://localhost:5000/tokenIsValid', null, {headers: {"x-auth-token": token}});
     if (tokenResponse.data) {
-    const userRes = await axios.get("https://react-nwgw.onrender.com", {
+    const userRes = await axios.get("http://localhost:5000", {
     headers: { "x-auth-token": token },
     });
     setUserD({
@@ -82,10 +82,10 @@ export default function Profile() {
             className="avatar-image"
             alt="profile-picture"
             src={pic}
-            sx={{ width: 120, height: 120 }}
+           
           />
           {userData.user && (
-            <p style={{ color: "white", fontSize: "22px", marginLeft:'20px' }}>
+            <p className="username-avatar">
               {userData.user.username}
             </p>
           )}
@@ -93,7 +93,7 @@ export default function Profile() {
         <div className="edit-button">
           <button className="profile-button" onClick={gotoUserProfilePage}>
             Edit profile
-            <EditIcon />
+            <EditIcon className="edit-icon-profile"/>
           </button>
           {showModal && (
             <UserProfile
