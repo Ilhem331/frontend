@@ -33,9 +33,9 @@ export default function Profile() {
     localStorage.setItem("auth-token", "");
     token = "";
     }
-    const tokenResponse = await axios.post('http://localhost:5000/tokenIsValid', null, {headers: {"x-auth-token": token}});
+    const tokenResponse = await axios.post('https://react-nwgw.onrender.com/tokenIsValid', null, {headers: {"x-auth-token": token}});
     if (tokenResponse.data) {
-    const userRes = await axios.get("http://localhost:5000", {
+    const userRes = await axios.get("https://react-nwgw.onrender.com", {
     headers: { "x-auth-token": token },
     });
     setUserD({
