@@ -38,7 +38,7 @@
     transform: translateY(-50%);
   }
   
-  /* Style the next arrow (right) with space */
+ 
 
   .alice-carousel__next-btn-item {
     left: 100%;
@@ -96,7 +96,7 @@
       }
       
       .random-button:hover {
-        background-color: transparent; /* Change color when hovering */
+        background-color: transparent; 
         color: #5d74a5;
       }        
 
@@ -826,8 +826,8 @@ z-index: 9999;
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
   position: absolute; /* Add this line */
-  top: 10px; /* Adjust this value to position it from the top */
-  right: 10px; /* Adjust this value to position it from the right */
+  top: 10px; 
+  right: 10px;
   z-index: 9999;
     }
     
@@ -929,7 +929,7 @@ z-index: 9999;
 }
 
 .random-button:hover {
-  background-color: transparent; /* Change color when hovering */
+  background-color: transparent; 
   color: #5d74a5;
 }        
 
@@ -1249,7 +1249,7 @@ z-index: 9999;
                     }
                     
                     .random-button:hover {
-                      background-color: transparent; /* Change color when hovering */
+                      background-color: transparent; 
                       color: #5d74a5;
                     }      
                     .prompt-container {
@@ -1998,7 +1998,7 @@ display: none !important;
           }
         .images-generation{
           display: flex;
-          justify-content: center; /* Center the content horizontally */
+          justify-content: center;
           align-items: center; 
           margin-top: -10px;
       
@@ -2006,7 +2006,7 @@ display: none !important;
         }
           .hom-placeholders {
             display: flex;
-            justify-content: center; /* Updated to flex-start */
+            justify-content: center; 
             align-items: center; 
             margin-left: 20px;
             margin-right: 0;
