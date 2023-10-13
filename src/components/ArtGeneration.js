@@ -23,13 +23,10 @@ import impressionism from "./images/impressionism.png";
 import { toast } from 'react-toastify';
 import "./ArtGeneration.css";
 import 'react-toastify/dist/ReactToastify.css';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import Flickity from 'react-flickity-component';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
-import 'flickity/css/flickity.css'; // Import Flickity CSS
+
 const options = ['8k resolution',
 'Hyperreal',
 'Realistic', 'Anime',]
