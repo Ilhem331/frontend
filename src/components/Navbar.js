@@ -208,7 +208,7 @@ const Navbar= () => {
      
         
         <nav className="nav" >
-		<button  onClick={gotoHomePage} className="app-name">My application</button>
+		<button  onClick={gotoHomePage} className="app-name">Romis Arts</button>
        
     <div className="avtar" >
   
