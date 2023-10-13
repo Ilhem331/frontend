@@ -17,7 +17,7 @@ const EditModal = ({ isOpen, onClose, imageUrl }) => {
     left: 0,
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgb(8, 18, 32)',
     display: isOpen ? 'flex' : 'none',
     alignItems: 'center',
     justifyContent: 'center',
@@ -29,11 +29,9 @@ const EditModal = ({ isOpen, onClose, imageUrl }) => {
 
 const modalContentStyles = {
   position: 'absolute',
-  top: '45%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
   backgroundColor: 'transparent',
-  backdropFilter: isOpen ? 'blur(8px)' : 'none',
   overflow: 'hidden',
  
 };
@@ -55,7 +53,7 @@ const modalContentStyles = {
     setIsLoading(true);
    
     axios
-      .post('https://react-nwgw.onrender.com/pix-pix', {
+      .post('http://localhost:5000/pix-pix', {
         prompt: modifiedText,
         init_image: imageUrl,
       })
@@ -77,7 +75,7 @@ const modalContentStyles = {
       return;
     }
   
-    const downloadUrl = `https://react-nwgw.onrender.com/api/download-image`;
+    const downloadUrl = `http://localhost:5000/api/download-image`;
   
     fetch(downloadUrl, {
       method: 'POST',
