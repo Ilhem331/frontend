@@ -98,7 +98,6 @@
       }
       .modal_download_container{
         position: absolute;
-       /* Adjust the top position as needed */
         left: calc(50% + 140px);
         
         
@@ -349,7 +348,6 @@
       }
       .modal_download_container{
         position: absolute;
-       /* Adjust the top position as needed */
         left: calc(50% + 110px);
         top: 10%;
         
@@ -443,7 +441,7 @@
     
       }
       .edit-prompt-modal:focus {
-        box-shadow: 0 0 0 1px grey; /* add white box-shadow when active */
+        box-shadow: 0 0 0 1px grey; 
       }
       .send-icon-button {
         position: absolute;
@@ -483,7 +481,6 @@
       }
       .modal_download_container{
         position: absolute;
-       /* Adjust the top position as needed */
         left: calc(50% + 140px);
         
         
