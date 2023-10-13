@@ -1,36 +1,33 @@
-.cover-user-profile {
+@media (min-width: 480px){
+  .cover-user-profile {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 10px;
-    width: 68%;
-    height: 200px;
-    margin-top: 120px;
-    margin-left: 300px;
-    
+    margin-top: 80px;
+    padding: 0 20px;
   }
   
-.cover-background {
-    width: 100%;
-    height: 100%;
+  .cover-background {
+    width: calc(100% - 40px); 
+    height: 70%;
     background-size: cover;
     background-position: center;
-    filter: blur(3px); /* Apply the blur effect */
+    filter: blur(3px); 
     position: absolute;
     top: 0;
-    left: 0;
+    left: 20px;
   }
 .gradient-custom-2 {
     
    
-/* fallback for old browsers */
+
 background: #fbc2eb;
 
-/* Chrome 10-25, Safari 5.1-6 */
+
 background: -webkit-linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1));
 
-/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 background: #222;
 }
 
@@ -56,7 +53,11 @@ background: #222;
     display: flex;
     align-items: center;
   }
-
+.username-avatar{
+  color: white;
+  font-size: 22px;
+  margin-left: 20px;
+}
 .profile-button{
     display: flex;
     justify-content: center;
@@ -82,9 +83,99 @@ background: #222;
    display: flex;
    border: solid 3px white;
    margin-top: -60px;
+   width: 120px !important;
+   height: 120px !important;
 
 
 
 
   
+}
+}
+
+
+@media (max-width: 480px) {
+  .cover-user-profile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 120px;
+
+    
+  }
+  
+.cover-background {
+    width: 360px;
+    height: 140px;
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px); 
+    position: absolute;
+    margin-top: -80px;
+  }
+  .profile-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin-top: 60px;
+    
+  }
+  .avatar-username {
+    display: flex;
+    align-items: center;
+
+ 
+   
+  }
+  .edit-button {
+    display: flex;
+    align-items: center;
+  }
+
+.profile-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 32px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    opacity: 0.99;
+    background-color: #809ad4;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.profile-button:hover{ 
+    background-color: #5d74a5;
+}
+
+.avatar-image{
+   display: flex;
+   border: solid 3px white;
+   width: 60px !important;
+   height: 60px !important;
+   margin-top: -50px;
+   margin-left: 10px;
+ 
+ 
+}
+.username-avatar{
+  color: white;
+  font-size: 16px;
+  margin-right: 110px;
+  margin-top: 10px;
+  
+}
+
+.edit-icon-profile{
+  font-size: 16px !important;
+
+}
 }
