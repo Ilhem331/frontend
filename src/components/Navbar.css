@@ -9,7 +9,10 @@
     color: black;
    
   }
+  @media (min-width: 480px){
   .app-name {
+    background-color: transparent;
+    border: none;
     text-decoration: none;
     color: white;
     font-size: 1.4rem;
@@ -28,49 +31,16 @@
   }
   
   
-  
   .card-text-start{
     background-color: white;
-    width: 240px;
-    height: 300px;
+    width: 210px;
+    height: 240px;
     position: absolute;
     opacity: 0.9;
     top: 100%;
     right: 10px;
     border-radius: 10px;
     z-index: 9999;
-  }
-  
-  span {
-    
-    font-size: 48px;
-    font-weight: bold;
-  }
-  
-  .avtar {
-    cursor: pointer;
-    position: absolute;
-    right: 50px;
-    top: 10px;
-    display: flex;
-    align-items: center;
-    color: white;
-    
-  }
-  
-  .bn {
-    display: flex;
-      border-radius: 20px;
-    margin-top: 6px;
-      background-color: transparent;
-      width: 18vh;
-    height: 40px;
-      align-items: center;
-      color: white;
-      text-decoration: none;
-    justify-content: center;
-    text-align: center;
-      border: none;
   }
   
   .bouton{
@@ -95,59 +65,72 @@
   color: #bfbcbc;
    
   }
-  
-  #premium {
-    border-radius: 30px;
-      background-image: linear-gradient(79deg, #89aec7, #708cdf 72%);
-    justify-content: center;
-    text-align: center;
-    padding: 15px;
-    width: 200px;
-    font-weight: bold;
-    align-items: center;
-    margin-left: 20px;
-    margin-top: 20px;
-      color: white;
-      outline: none;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
-      text-decoration: none;
-  }
-  .user-avatar {
+    
+  .bn {
     display: flex;
-    align-items: center;
+      border-radius: 20px;
+    margin-top: 6px;
+      background-color: transparent;
+      width: 18vh;
+    height: 40px;
+      align-items: center;
+      color: white;
+      text-decoration: none;
     justify-content: center;
-    gap: 10px; /* Adjust the gap between text and Avatar */
-    color: #222;
     text-align: center;
-    font-weight: bold;
-    font-size: 18px;
+      border: none;
   }
-  .premium{
-    justify-content: center;
-    text-align: center;
-    width: 180px;
-    height: 48px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #222;
-    background-color: #e5e5e5;
-    border-radius: 30px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-  }
-  .premium:hover{
-    background-color: #202020;
+}
+#premium {
+  border-radius: 30px;
+    background-image: linear-gradient(79deg, #89aec7, #708cdf 72%);
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  width: 200px;
+  font-weight: bold;
+  align-items: center;
+  margin-left: 20px;
+  margin-top: 20px;
     color: white;
-  }
-  
-  .button-hover:hover {
-    background: #f0f0f0; /* Change to the desired hover background color */
-  }
-  
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+}
+.user-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Adjust the gap between text and Avatar */
+  color: #222;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+.premium{
+  justify-content: center;
+  text-align: center;
+  width: 180px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  background-color: #e5e5e5;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.premium:hover{
+  background-color: #202020;
+  color: white;
+}
 
+.button-hover:hover {
+  background: #f0f0f0; /* Change to the desired hover background color */
+}
   .modalButton {
     position: fixed;
     top: 40%;
@@ -216,6 +199,26 @@
     border: 1px solid #411b57;
     /* color: #ffffff; */
   }
+  
+  
+  
+  span {
+    
+    font-size: 48px;
+    font-weight: bold;
+  }
+  
+  .avtar {
+    cursor: pointer;
+    position: absolute;
+    right: 50px;
+    top: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    
+  }
+
   @media screen and (max-width: 500px) {
     .modalContainer {
       flex-direction: column;
@@ -227,4 +230,68 @@
      
       
     }
+}
+@media (max-width: 480px) {
+  .img-styles img {
+    width: 300px;
+    height: 300px;
+    margin: 6px;
+    filter: blur(1px);
+  }
+  .bouton{
+    
+    border-radius: 30px;
+    background-color: transparent;
+    font-size: 18px;
+    width: 20px;
+    margin-left: 140px;
+    padding: 6px;
+    color: white;
+    text-decoration: none;
+    border: none;
+   display: flex;
+   text-align: center;
+   justify-content: center;
+}
+.bouton:hover{
+  
+  
+color: #bfbcbc;
+ 
+}
+.app-name {
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  color: white;
+  margin-left: 1rem;
+  font-size: 22px;
+}
+  
+.bn {
+    display: flex;
+    border-radius: 20px;
+    margin-top: 6px;
+    margin-left: 80px;
+    background-color: transparent;
+    width: 12vh;
+    height: 40px;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+    text-align: center;
+    border: none;
+}
+.card-text-start{
+  background-color: white;
+  width: 180px;
+  height: 220px;
+  position: absolute;
+  opacity: 0.9;
+  top: 100%;
+  right: 10px;
+  border-radius: 10px;
+  z-index: 9999;
+}
 }
