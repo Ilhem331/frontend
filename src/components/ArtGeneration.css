@@ -241,7 +241,7 @@ z-index: 9999;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    pointer-events: none; 
+    pointer-events: auto; 
   }
   .slider {
     -webkit-appearance: none;
@@ -1135,7 +1135,7 @@ z-index: 9999;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    pointer-events: none; 
+    pointer-events: auto; 
   }
   .slider {
     -webkit-appearance: none;
@@ -1653,7 +1653,7 @@ display: none !important;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          pointer-events: none; 
+          pointer-events: auto; 
         }
         .slider {
           -webkit-appearance: none;
@@ -1794,7 +1794,7 @@ display: none !important;
             backdrop-filter: blur(7px);
             -webkit-backdrop-filter: blur(7px);
             position: absolute; 
-            top: 10px; 
+            top: 20px; 
             right: 10px;
             z-index: 9999;
               }
@@ -2204,7 +2204,7 @@ display: none !important;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    pointer-events: none; 
+    pointer-events: auto; 
   }
   .slider {
     -webkit-appearance: none;
