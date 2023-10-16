@@ -472,8 +472,7 @@ const handleCreateImage = () => {
                  </div>
                )}
     <div>
-      
-     {!loadingImg && !generatedImg &&(
+         {!loadingImg && !generatedImg &&(
         <div className="slider-values-range">
       <input
         type="range"
@@ -484,9 +483,9 @@ const handleCreateImage = () => {
         className="slider"
       />
       <div className="slider-values">
-        <span className={`slider-value ${strength === 0 ? 'active' : ''}`}>Weak</span>
-        <span className={`slider-value ${strength === 1 ? 'active' : ''}`}>Normal</span>
-        <span className={`slider-value ${strength === 2 ? 'active' : ''}`}>Strong</span>
+      <span className={`slider-value ${strength === 0 ? 'active' : ''}`}>Weak</span>
+            <span className={`slider-value ${strength === 1 ? 'active' : ''}`}>Normal</span>
+            <span className={`slider-value ${strength === 2 ? 'active' : ''}`}>Strong</span>
       </div>
     </div>
     
