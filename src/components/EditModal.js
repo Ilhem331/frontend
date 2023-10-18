@@ -53,7 +53,7 @@ const modalContentStyles = {
     setIsLoading(true);
    
     axios
-      .post('http://localhost:5000/pix-pix', {
+      .post('https://react-nwgw.onrender.com/pix-pix', {
         prompt: modifiedText,
         init_image: imageUrl,
       })
