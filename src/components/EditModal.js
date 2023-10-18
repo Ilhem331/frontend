@@ -75,7 +75,7 @@ const modalContentStyles = {
       return;
     }
   
-    const downloadUrl = `http://localhost:5000/api/download-image`;
+    const downloadUrl = `https://react-nwgw.onrender.com/api/download-image`;
   
     fetch(downloadUrl, {
       method: 'POST',
